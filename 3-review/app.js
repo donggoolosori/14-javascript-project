@@ -53,9 +53,32 @@ let currentItem = 0;
 
 // load intial item
 window.addEventListener("DOMContentLoaded", () => {
-  const item = reviews[currentItem];
+  showPerson(currentItem);
+});
+
+// show person based on item
+const showPerson = (person) => {
+  const item = reviews[person];
   img.src = item.img;
-  author.textContent = item.author;
+  author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+};
+
+// previous button
+prevBtn.addEventListener("click", () => {
+  currentItem = currentItem != 0 ? currentItem - 1 : reviews.length - 1;
+  showPerson(currentItem);
+});
+
+// next button
+nextBtn.addEventListener("click", () => {
+  currentItem = currentItem != reviews.length - 1 ? currentItem + 1 : 0;
+  showPerson(currentItem);
+});
+
+// random button
+randomBtn.addEventListener("click", () => {
+  currentItem = Math.floor(Math.random() * reviews.length);
+  showPerson(currentItem);
 });
