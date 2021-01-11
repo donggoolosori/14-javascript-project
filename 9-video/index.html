@@ -7,10 +7,26 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- javascript -->
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <h1>video project</h1>
-    <!-- javascript -->
-    <script src="app.js"></script>
+    <!-- preloader -->
+    <div class="preloader">
+      <img src="./preloader.gif" alt="preloader" />
+    </div>
+    <!-- header -->
+    <header>
+      <video class="video-container" controls muted autoplay loop>
+        <source src="./video.mp4" type="video/mp4" />
+      </video>
+      <h1>video project</h1>
+      <!-- switch -->
+      <button class="switch-btn">
+        <span> play </span>
+        <span> pause </span>
+        <span class="switch"></span>
+      </button>
+    </header>
   </body>
 </html>
